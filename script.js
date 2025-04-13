@@ -30,3 +30,21 @@ async function getMovies(num) {
     console.log(movies)
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const sessoes = document.querySelectorAll('.sessao-item');
+    const sessaoSelecionada = document.querySelector('.selecionada');
+    
+    sessoes.forEach(sessao => {
+        sessao.addEventListener('click', () => {
+            // Remove seleção anterior
+            sessoes.forEach(s => s.style.backgroundColor = '');
+            
+            // Atualiza sessão selecionada
+            sessao.style.backgroundColor = '#e0e0e0';
+            sessaoSelecionada.querySelector('h2').textContent = sessao.textContent;
+        });
+    });
+
+    // Simula dados iniciais
+    sessoes[5].click(); // Seleciona a sessão 6 inicialmente
+});

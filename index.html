@@ -8,8 +8,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 onclick="getMovies(15)">Olá Mundo!</h1>
+    <header>
+        <img src="logo.png" alt="Logo Cinemática" class="logo">
+        <h1>BILHETERIA</h1>
+    </header>
+    
+    <main>
+        <section class="sessoes">
+            <div class="sessao-item">Sessão 1</div>
+            <div class="sessao-item">Sessão 2</div>
+            <div class="sessao-item">Sessão 3</div>
+            <div class="sessao-item">Sessão 4</div>
+            <div class="sessao-item">Sessão 5</div>
+            <div class="sessao-item">Sessão 6</div>
+            <div class="sessao-item">Sessão 7</div>
+            <div class="sessao-item">Sessão 8</div>
+            <div class="sessao-item">Sessão 9</div>
+            <div class="sessao-item">Sessão 10</div>
+        </section>
 
+        <section class="selecionada">
+            <h2>Sessão 6</h2>
+            <img src="https://via.placeholder.com/150" alt="Capa do Filme">
+            <h3>Nome do Filme</h3>
+            <p>Gênero: Ação</p>
+            <p class="sinopse">Sinopse: Lorem ipsum dolor sit amet</p>
+        </section>
+
+        <section class="clientes">
+            <div class="foto-cliente"><img src="https://via.placeholder.com/50" alt="Foto Cliente"></div>
+            <div class="fila">Clientes na fila: 0</div>
+            <div class="info-cliente">
+                <p>Nome: João</p>
+                <p>Idade: 25</p>
+                <p>Filme: Filme Exemplo</p>
+                <button>Aprovar Entrada</button>
+            </div>
+        </section>
+
+        <section class="ranking">
+            <h2>Ranking</h2>
+            <ol>
+                <li>Filme A - 150 ingressos</li>
+                <li>Filme B - 120 ingressos</li>
+                <li>Filme C - 90 ingressos</li>
+            </ol>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
