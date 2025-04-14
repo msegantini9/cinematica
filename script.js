@@ -1,5 +1,7 @@
-const apiKey = "dc3a431a";
+const apiKeyMovie = "dc3a431a";
+const apiKeyPerson = "18994|9PqEHP98xbWgYslJRphz3V35TyRVdEE4" 
 let movies = [];
+let people = [];
 
 async function getMovies(num) {
 
@@ -7,8 +9,8 @@ async function getMovies(num) {
 
     for (let i=0; i<num; i++) {
         
-        randomNumber = Math.round((Math.random())*100);
-        url = `https://www.omdbapi.com/?i=tt000000${randomNumber}&apikey=${apiKey}`
+        randomNumber = Math.round((Math.random())*100); //Gera um número rndomico para bsca pelo ID do filme
+        url = `https://www.omdbapi.com/?i=tt000000${randomNumber}&apikey=${apiKeyMovie}` // Realiza busca na API pelo ID
 
         try {
 
@@ -30,6 +32,34 @@ async function getMovies(num) {
     console.log(movies)
 }
 
+async function getPeople(num) {
+
+    let url;
+
+    for (let i=0; i<num; i++) {
+        
+        url = `https://api.invertexto.com/v1/faker?token=${apiKeyPerson}&fields=name%2Cbirth_date&locale=pt_BR `
+
+        try {
+
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+
+            const person = await response.json();
+            people.push(person);
+
+        } catch (error) {
+            console.error(error.message);
+        }
+
+    }
+
+    console.log(people)
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const sessoes = document.querySelectorAll('.sessao-item');
     const sessaoSelecionada = document.querySelector('.selecionada');
@@ -47,4 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simula dados iniciais
     sessoes[5].click(); // Seleciona a sessão 6 inicialmente
+    getMovies(15); // Realiza busca na API e retorna os filmes
+    getPeople(15); // Realiza busca na API e retorna as pessoas
 });
