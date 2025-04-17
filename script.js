@@ -20,8 +20,11 @@ async function getMovies(num) {
                 throw new Error(`Response status: ${response.status}`);
             }
 
-            const movie = await response.json();
-            movies.push(movie);
+            const data = await response.json();
+
+            let movie = [data.Title, data.Genre, data.Plot, data.Poster];
+
+            queue(movies, movie);
 
         } catch (error) {
             console.error(error.message);
@@ -30,6 +33,14 @@ async function getMovies(num) {
     }
 
     console.log(movies)
+}
+
+function queue(list, data) {
+    list.push(data);
+}
+
+function unqueue(list) {
+    list.pop();
 }
 
 async function getPeople(num) {
@@ -48,8 +59,17 @@ async function getPeople(num) {
                 throw new Error(`Response status: ${response.status}`);
             }
 
-            const person = await response.json();
-            people.push(person);
+            const data = await response.json();
+
+            let now = new Date().getFullYear();
+            let birth = new Date(data.birth_date).getFullYear();
+
+            let name = data.name;
+            let age = (now - birth);
+
+            let person = [name, age]
+
+            queue(people, person);
 
         } catch (error) {
             console.error(error.message);
