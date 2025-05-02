@@ -1,95 +1,167 @@
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cabin", sans-serif;
+    font-weight: 500;
     height: 100vh;
-    display: grid;
-    grid-template-rows: 50px 1fr;
+    background: linear-gradient(to right, #000000, #555555);
+    color: #e2e8f0; 
 }
 
 header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    padding: 0 50px;
-    background-color: #333;
+    background-color: #9f3223;
     color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .logo {
-    height: 40px;
+    position: absolute;
+    left: 40px;
+    width: 60px;
+    height: 60px;
 }
 
 main {
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 10px;
-}
-
-.sessoes {
-    grid-row: 1 / 3;
-    grid-column: 1 / 4;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 5px;
-}
-
-.sessao-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+}
+
+.sessoes {
+   display: flex;
+   overflow-x: auto;
+   gap: 15px;
+   padding: 10px;
+   width: 100%;
+   justify-content: center;
+}
+
+.sessao-item {
+    min-width: 120px;
+    height: 180px;
+    background: #1f2937;
+    color: #f1f5f9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s;
+}
+
+.sessao-item:hoover {
+    transform: scale(1.05);
+}
+
+.inferior {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 20px;
 }
 
 .selecionada {
-    grid-row: 3 / 6;
-    grid-column: 2 / 3;
-    border: 2px solid green;
-    padding: 10px;
-    text-align: center;
+   background: linear-gradient(145deg, #0f172a, #1e293b);
+   border-radius: 20px;
+   width: 80%;
+   padding: 20px;
+   margin: 30px 0;
+   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+   order: 2;
+   text-align: center;
+}
+
+.selecionada img {
+    width: 180px;
+    border-radius: 10px;
+    margin: 15px 0;
 }
 
 .clientes {
-    grid-row: 3 / 6;
-    grid-column: 1 / 2;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
-}
-
-.ranking {
-    grid-row: 3 / 6;
-    grid-column: 3 / 4;
-    border: 1px solid #ccc;
-    padding: 10px;
+    background: linear-gradient(145deg, #0f172a, #1e293b);
+    border-radius: 20px;
+    width: 80%;
+    padding: 20px;
+    margin: 30px 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    order: 1;
+    justify-content: space-around;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
 }
 
 .foto-cliente img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    order: 1;
+    border-radius: 50%;
+    background: #334155;
+    padding: 8px;
 }
 
 .info-cliente {
-    grid-row: 1 / 3;
-    grid-column: 2 / 3;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    order: 2;
+    gap: 10px;
 }
 
-button {
-    padding: 5px;
+.info-cliente button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
-.sinopse {
-    display: none;
+.info-cliente button:hover {
+    background-color: white;
+    color: #2563eb;
+    transform: scale(1.05);
+}
+
+.fila {
+    display: flex;
+    flex-direction: column;
+    order: 3;
+}
+
+.ranking {
+    background: linear-gradient(145deg, #0f172a, #1e293b);
+    border-radius: 20px;
+    order: 3;
+    width: 80%;
+    padding: 20px;
+    margin: 30px 0;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.ranking h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .ranking ol {
-    margin-top: 20px;
+    list-style-position: inside;
+    font-weight: bold;
 }
