@@ -86,17 +86,18 @@ main {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 30px;
+    gap: 50px;
     margin-top: 30px;
     padding: 20px;
+
+    width: 80vw;
 }
 
 .selecionada {
    background: linear-gradient(145deg, #0f172a, #1e293b);
    border-radius: 20px;
    width: 80%;
-   padding: 20px;
-   margin: 30px 0;
+   padding: 40px;
    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
    order: 2;
    text-align: center;
@@ -108,28 +109,34 @@ main {
     margin: 15px 0;
 }
 
+.selecionada p, h3 {
+    padding-top: 10px;
+}
+
 .clientes {
     background: linear-gradient(145deg, #0f172a, #1e293b);
     border-radius: 20px;
-    width: 80%;
-    padding: 20px;
-    margin: 30px 0;
+    padding: 40px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     align-items: center;
     order: 1;
-    justify-content: space-around;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+    width: 80%;
+    justify-content: space-between;
 }
 
 .foto-cliente img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     display: flex;
     order: 1;
     border-radius: 50%;
     background: #334155;
     padding: 8px;
+
+    margin-bottom: 40px;
 }
 
 .info-cliente {
@@ -137,13 +144,17 @@ main {
     flex-direction: column;
     order: 2;
     gap: 10px;
+
+    font-size: 1.2rem;
 }
 
 .info-cliente button {
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     padding: 10px 20px;
     background-color: #2563eb;
     color: white;
+    font-size: 1.4rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -168,8 +179,7 @@ main {
     border-radius: 20px;
     order: 3;
     width: 80%;
-    padding: 20px;
-    margin: 30px 0;
+    padding: 40px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
 }
 
