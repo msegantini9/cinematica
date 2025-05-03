@@ -9,41 +9,71 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo Cinemática" class="logo">
+        <img src="img/logo.jpg" alt="Logo Cinemática" class="logo">
         <h1>BILHETERIA</h1>
     </header>
     
     <main>
         <section class="sessoes">
-            <div class="sessao-item">Sessão 1</div>
-            <div class="sessao-item">Sessão 2</div>
-            <div class="sessao-item">Sessão 3</div>
-            <div class="sessao-item">Sessão 4</div>
-            <div class="sessao-item">Sessão 5</div>
-            <div class="sessao-item">Sessão 6</div>
-            <div class="sessao-item">Sessão 7</div>
-            <div class="sessao-item">Sessão 8</div>
-            <div class="sessao-item">Sessão 9</div>
-            <div class="sessao-item">Sessão 10</div>
+            <div class="sessao-item" id="0">
+                <h2>Sessão 1</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="1">
+                <h2>Sessão 2</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="2">
+                <h2>Sessão 3</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="3">
+                <h2>Sessão 4</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="4">
+                <h2>Sessão 5</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="5">
+                <h2>Sessão 6</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="6">
+                <h2>Sessão 7</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="7">
+                <h2>Sessão 8</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="8">
+                <h2>Sessão 9</h2>
+                <img>
+            </div>
+            <div class="sessao-item" id="9">
+                <h2>Sessão 10</h2>
+                <img>
+            </div>
         </section>
 
     <div class="inferior">
         <section class="selecionada">
             <h2>Sessão 6</h2>
-            <img src="https://via.placeholder.com/150" alt="Capa do Filme">
+            <img src="img/theater.svg" alt="Capa do Filme">
             <h3>Nome do Filme</h3>
             <p>Gênero: Ação</p>
             <p class="sinopse">Sinopse: Lorem ipsum dolor sit amet</p>
         </section>
 
         <section class="clientes">
-            <div class="foto-cliente"><img src="https://via.placeholder.com/50" alt="Foto Cliente"></div>
+            <div class="foto-cliente"><img src="img/person.svg" alt="Foto Cliente"></div>
             <div class="fila">Clientes na fila: 0</div>
             <div class="info-cliente">
                 <p>Nome: João</p>
                 <p>Idade: 25</p>
                 <p>Filme: Filme Exemplo</p>
-                <button>Aprovar Entrada</button>
+                <button onclick="aprovarEntrada()">Aprovar Entrada</button>
             </div>
         </section>
 
